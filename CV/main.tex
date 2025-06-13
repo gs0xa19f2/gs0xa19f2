@@ -1,170 +1,162 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Developer CV - XeLaTeX Version for Cyrillic
-% Based on LaTeX Template Version 1.1
-% https://www.LaTeXTemplates.com
-% Adapted for gs0xa19f2 on 2025-04-25
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------
+% Resume in Latex
+% Author : Adapted for Sergey Gusev (gs0xa19f2)
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
 
-\documentclass[10pt]{developercv} % Main Font size 10pt
+\documentclass[letterpaper,12pt]{article}
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND FONT CONFIGURATION for XeLaTeX
-%----------------------------------------------------------------------------------------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[russian]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
-\usepackage[russian]{babel} % For Russian hyphenation, date formats, etc.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\usepackage{fontspec}       % Primary package for font selection in XeLaTeX
-\setmainfont{Liberation Serif} % Set main font (supports Cyrillic)
-% You can try others like: {PT Serif}, {DejaVu Serif}, {Times New Roman}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-% Set sans-serif and monospace fonts if needed by the template elements
-\setsansfont{Liberation Sans} % Companion sans-serif font
-\setmonofont{Liberation Mono} % Companion monospace font for \texttt{}
+\urlstyle{same}
 
-\usepackage{hyperref}       % For clickable links (load relatively late)
-% Ensure hyperref handles UTF-8 characters in URLs and metadata correctly with XeLaTeX
-\hypersetup{              % Configure hyperref colors/metadata if desired
-    pdfencoding=auto, % Usually good for XeLaTeX
-    unicode=true,    % Enable Unicode characters in bookmarks
-    pdftitle={Резюме Сергея Гусева},
-    pdfauthor={Сергей Гусев},
-    pdfcreator={XeLaTeX with developercv},
-    colorlinks=true,
-    linkcolor=black, % Color for internal links (e.g., ToC - not used here)
-    urlcolor=blue,   % Color for URLs, choose a color you like (e.g., blue, black)
-    citecolor=black  % Color for citations (not used here)
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Увеличенные отступы между секциями и над именем
+\titleformat{\section}{
+  \vspace{7pt}\scshape\raggedright\large % <--- Изменено здесь
+}{}{0em}{}[\color{black}\titlerule \vspace{5pt}] % <--- и здесь
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
 }
 
-%----------------------------------------------------------------------------------------
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	TITLE AND CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
-
-\begin{minipage}[t]{0.45\textwidth} % Left column: Name and Title
-	\vspace{-\baselineskip} % Vertical alignment adjustment
-
-	% Using \textbf instead of \MakeUppercase for better Cyrillic compatibility with some fonts
-	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{СЕРГЕЙ}}}} % First name
-	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{ГУСЕВ}}}}   % Last name
-
-	\vspace{6pt} % Vertical space
-
-	{\huge Java-разработчик} % Job Title
-\end{minipage}
-\hfill % Horizontal space
-\begin{minipage}[t]{0.27\textwidth} % Center column: Contact Info (Width 0.27)
-	\vspace{-\baselineskip} % Vertical alignment adjustment
-    \small % <-- Set font size to small (approx 9pt) for this block
-	\icon{At}{12}{\href{mailto:greygosling6@gmail.com}{greygosling6@gmail.com}}\\
-	\icon{Phone}{12}{\href{tel:+79201206928}{+7 920 120 6928}}\\
-\end{minipage}
-\hfill % Horizontal space
-\begin{minipage}[t]{0.27\textwidth} % Right column: Contact Info (Width 0.27)
-	\vspace{-\baselineskip} % Vertical alignment adjustment
-    \small % <-- Set font size to small (approx 9pt) for this block
-	\icon{Github}{12}{\href{https://github.com/gs0xa19f2}{github.com/gs0xa19f2}}\\
-	\icon{TelegramPlane}{12}{\href{https://t.me/gs0xa19f2}{@gs0xa19f2}}
-\end{minipage}
-
-\vspace{0.5cm} % Vertical space after header
-
-%----------------------------------------------------------------------------------------
-%	WHO AM I / INTRODUCTION & SKILLS
-%----------------------------------------------------------------------------------------
-
-\cvsect{Кто я?} % Section Title
-
-\begin{minipage}[t]{0.4\textwidth} % Left column: Introduction Text
-	\vspace{-\baselineskip} % Vertical alignment adjustment
-	Я студент третьего курса направления "Компьютерные технологии: программирование и искусственный интеллект" в Университете ИТМО. Увлечен Kotlin, Java-разработкой, алгоритмами и созданием эффективных решений на различных платформах.
-    Посетите мой Github, если хотите узнать больше.
-\end{minipage}
-\hfill % Horizontal space
-\begin{minipage}[t]{0.5\textwidth} % Right column: Programming Languages Bar Chart
-	\vspace{-\baselineskip} % Vertical alignment adjustment
-
-	% --- PROGRAMMING LANGUAGES BAR CHART ---
-	\begin{barchart}{5.5} % Max bar width in cm
-		\baritem{Java}{100}
-        \baritem{Kotlin}{90}
-		\baritem{Go}{80}
-        \baritem{Python}{70}
-        \baritem{C/C++}{60}
-	\end{barchart}
-\end{minipage}
-
-% --- TOOLS & FRAMEWORKS BUBBLES ---
+%----------HEADING----------
 \begin{center}
-    % Размеры немного уменьшены, SQL сокращен для лучшего вида
-	\bubbles{5/Docker, 5/Spring, 5/Git, 4/SQL, 3/MongoDB, 4/Linux, 4/Bash}
+    {\Huge \scshape Сергей Гусев} \\[16pt] % Увеличенный вертикальный отступ под именем
+    \href{mailto:greygosling6@gmail.com}{greygosling6@gmail.com} $|$ 
+    +7 920 120 6928 $|$
+    \href{https://github.com/gs0xa19f2}{github.com/gs0xa19f2} $|$
+    \href{https://t.me/gs0xa19f2}{@gs0xa19f2} $|$
+    \href{https://leetcode.com/gs0xa19f2}{leetcode.com/gs0xa19f2}
 \end{center}
 
-%----------------------------------------------------------------------------------------
-%	PROJECTS
-%----------------------------------------------------------------------------------------
+%-----------ABOUT-----------
+\section{О себе}
+Я студент третьего курса направления «Компьютерные технологии: программирование и искусственный интеллект» в Университете ИТМО. Увлечен Java-разработкой, Kotlin, Go, алгоритмами и созданием эффективных решений на различных платформах
 
-\cvsect{Проекты} % Section Title
+%-----------EDUCATION-----------
+\section{Образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Университет ИТМО}{} 
+      {Бакалавр, Компьютерные технологии: программирование и искусственный интеллект}{}
+    \resumeSubheading
+      {Лицей научно-инженерного профиля (ЛНИП)}{}
+      {Среднее общее образование}{}
+  \resumeSubHeadingListEnd
 
-\begin{entrylist}
-	\entry
-		{} % Date (optional)
-		{DSL ChatBot (Kotlin)} % Project Title
-		{\href{https://github.com/gs0xa19f2/ITMO/tree/main/Kotlin/ChatBotDSL}{Ссылка на проект}} % Link/Context
-		{Разработан DSL для создания и управления функциональностью чат-ботов, включая обработку сообщений и управление контекстами.}
-	\entry
-		{} % Date (optional)
-		{Мультиплатформенный HTTP-клиент (Kotlin)} % Project Title
-		{\href{https://github.com/gs0xa19f2/ITMO/tree/main/Kotlin/MultiplatformClient}{Ссылка на проект}} % Link/Context
-		{Создан HTTP-клиент с поддержкой JVM, JS (Node.js, Browser) и Native платформ, с общей логикой и платформо-специфическими реализациями.}
-    \entry
-		{} % Date (optional)
-		{Система контроля версий (Go)} % Project Title
-		{\href{https://github.com/gs0xa19f2/Hyperskill/tree/main/Projects/Go/Version\%20Control\%20System\%20}{Ссылка на проект}} % Link/Context
-		{Реализована легковесная система контроля версий с нуля, предоставляющая основные функции Git.}
-    \entry
-		{} % Date (optional)
-		{Regex Engine (Go)} % Project Title
-		{\href{https://github.com/gs0xa19f2/Hyperskill/tree/main/Projects/Go/Regex\%20Engine\%20}{Ссылка на проект}} % Link/Context
-		{Написан собственный движок для работы с регулярными выражениями, способный анализировать и сопоставлять шаблоны в тексте.}
-\end{entrylist}
+%-----------PROJECTS-----------
+\section{Проекты}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/gs0xa19f2/ITMO/tree/main/Kotlin/ChatBotDSL}{\textbf{DSL ChatBot}} $|$ \emph{Kotlin}}{}
+          \resumeItemListStart
+            \resumeItem{DSL для создания и управления функциональностью чат-ботов, включая обработку сообщений и управление контекстами}
+          \resumeItemListEnd
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
+      \resumeProjectHeading
+          {\href{https://github.com/gs0xa19f2/ITMO/tree/main/Kotlin/MultiplatformClient}{\textbf{Мультиплатформенный HTTP-клиент}} $|$ \emph{Kotlin (JVM, JS, Native)}}{}
+          \resumeItemListStart
+            \resumeItem{Поддерживает JVM, JS (Node.js, Browser) и Native платформы, с общей логикой и платформо-специфическими реализациями}
+          \resumeItemListEnd
 
-\cvsect{Образование} % Section Title
+      \resumeProjectHeading
+          {\href{https://github.com/gs0xa19f2/Hyperskill/tree/main/Projects/Go/Version\%20Control\%20System\%20}{\textbf{Система контроля версий}} $|$ \emph{Go}}{}
+          \resumeItemListStart
+            \resumeItem{Предоставляет основные функции Git}
+          \resumeItemListEnd
 
-\begin{entrylist}
-	\entry
-		{} % Dates (optional)
-		{Университет ИТМО} % Institution Name
-		{Санкт-Петербург}
-		{} % Description (optional)
-	\entry
-		{} % Dates (optional)
-		{Лицей научно-инженерного профиля (ЛНИП)} % Institution Name
-		{г. Королёв, Московская область} % Location/Details
-		{} % Description (optional)
-\end{entrylist}
+      \resumeProjectHeading
+          {\href{https://github.com/gs0xa19f2/Hyperskill/tree/main/Projects/Go/Regex\%20Engine\%20}{\textbf{Regex Engine}} $|$ \emph{Go}}{}
+          \resumeItemListStart
+            \resumeItem{Движок для работы с регулярными выражениями, способный анализировать и сопоставлять шаблоны в тексте}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
 
-%----------------------------------------------------------------------------------------
-%	OTHER
-%----------------------------------------------------------------------------------------
+%-----------TECHNICAL SKILLS-----------
+\section{Технические навыки}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Языки программирования}{: Java, Kotlin, Go, Python, C/C++, SQL, Bash} \\
+     \textbf{Фреймворки и технологии}{: Spring, Docker, Git, JUnit, REST, MongoDB, Linux} \\
+    }}
+ \end{itemize}
 
-\cvsect{Другое} % Section Title
+%-----------OTHER-----------
+\section{Прочее}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item{\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/Рекомендательное%20письмо%20UCSD.pdf}{Получено рекомендательное письмо от профессоров \textbf{А.С. Куликова} (СПбГУ, ПОМИ РАН) и \textbf{П. Певзнера} (UCSD, University of California, San Diego).}}
+    \item{\href{https://hyperskill.org/wrapped/year-2024/398153840?utm_source=wrapped_hs&utm_medium=social&utm_campaign=newyear_wrapped2024}{Вошёл в топ 3\% студентов Hyperskill (JetBrains Academy) по всему миру по итогам 2024 года.}}
+ \end{itemize}
 
-% Текст идет прямо под заголовком секции
-Получено рекомендательное письмо от профессоров \textbf{Александра С. Куликова} (СПбГУ, ПОМИ РАН) и \textbf{Павла Певзнера} (UCSD) из \textbf{Университета Калифорнии в Сан-Диего}.
-\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/Рекомендательное%20письмо%20UCSD.pdf}{\textbf{Нажмите здесь для просмотра письма.}}
-
-\vspace{0.3cm} % Добавляем небольшой отступ перед следующим пунктом
-
-Вошел в \textbf{топ 3\% студентов Hyperskill (JetBrains Academy) по всему миру} по итогам 2024 года.
-\href{https://hyperskill.org/wrapped/year-2024/398153840?utm_source=wrapped_hs&utm_medium=social&utm_campaign=newyear_wrapped2024}{\textbf{Подробнее здесь.}} % Добавлена информация о Hyperskill
-
-%----------------------------------------------------------------------------------------
-
+%-------------------------------------------
 \end{document}
