@@ -38,10 +38,9 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Увеличенные отступы между секциями и над именем
 \titleformat{\section}{
-  \vspace{7pt}\scshape\raggedright\large % <--- Изменено здесь
-}{}{0em}{}[\color{black}\titlerule \vspace{5pt}] % <--- и здесь
+  \vspace{7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{5pt}]
 
 \pdfgentounicode=1
 
@@ -61,13 +60,6 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -75,13 +67,9 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.32in, label={}]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
@@ -89,9 +77,9 @@
 
 \begin{document}
 
-%----------HEADING----------
 \begin{center}
-    {\Huge \scshape Сергей Гусев} \\[16pt] % Увеличенный вертикальный отступ под именем
+    {\Huge \scshape Сергей Гусев} \\[8pt]
+    {\Large \scshape Java Backend Developer} \\[12pt]
     \href{mailto:greygosling6@gmail.com}{greygosling6@gmail.com} $|$ 
     +7 920 120 6928 $|$
     \href{https://github.com/gs0xa19f2}{github.com/gs0xa19f2} $|$
@@ -99,60 +87,61 @@
     \href{https://leetcode.com/gs0xa19f2}{leetcode.com/gs0xa19f2}
 \end{center}
 
-%-----------ABOUT-----------
-\section{О себе}
-Я студент третьего курса направления «Компьютерные технологии: программирование и искусственный интеллект» в Университете ИТМО. Увлечен Java-разработкой, Kotlin, Go, алгоритмами и созданием эффективных решений на различных платформах
+%-----------EXPERIENCE-----------
+\section{Опыт}
+\resumeSubHeadingListStart
 
-%-----------EDUCATION-----------
-\section{Образование}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Университет ИТМО}{} 
-      {Бакалавр, Компьютерные технологии: программирование и искусственный интеллект}{}
-    \resumeSubheading
-      {Лицей научно-инженерного профиля (ЛНИП)}{}
-      {Среднее общее образование}{}
-  \resumeSubHeadingListEnd
+  \resumeSubheading
+    {Picodata}{2025 -- наст.вр.}
+    {Part-time стажер-разработчик}{Удаленно}
+    \resumeItemListStart
+      \resumeItem{Реализовал плагин прозрачного кеша. Участвовал в создании и поддержке API. Занимался поддержкой и развитием имплементации протокола Cassandra на базе Picodata}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Фриланс}{2024}
+    {Fullstack Web-разработчик}{Удаленно}
+    \resumeItemListStart
+      \resumeItem{Разработал сайт с регистрацией и авторизацией, приоритет — безопасность. Проектировал архитектуру, реализовал backend и frontend. Использовал PDO для защиты от SQL-инъекций, bcrypt для хеширования паролей. Внедрил CSRF и XSS-защиту, санитизацию данных, экранирование вывода, отключение опасных функций. Обеспечил покрытие тестами}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Навыки}
+ \resumeSubHeadingListStart
+    \resumeItem{\textbf{Технологии и фреймворки:} Spring Boot, Kafka, Docker, Git, Linux, REST, gRPC, JUnit, Mockito}
+    \resumeItem{\textbf{Языки программирования:} Java, Kotlin, Go, Python, C/C++, Rust, Bash}
+    \resumeItem{\textbf{Базы данных:} MySQL, PostgreSQL, MongoDB}
+    \resumeItem{\textbf{Языки:} Русский (родной), Английский (C1)}
+ \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Проекты}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\href{https://github.com/gs0xa19f2/ITMO/tree/main/Kotlin/ChatBotDSL}{\textbf{DSL ChatBot}} $|$ \emph{Kotlin}}{}
-          \resumeItemListStart
-            \resumeItem{DSL для создания и управления функциональностью чат-ботов, включая обработку сообщений и управление контекстами}
-          \resumeItemListEnd
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Плагин кеширования и поиска стран для Picodata}}{}
+    \resumeItemListStart
+      \resumeItem{Плагин, реализующий HTTP API для получения информации о странах с кешированием в базе. Включает реализацию endpoint'а, автоматическое обновление данных, поддержку TTL для кеша, обработку ошибок и покрытие интеграционными тестами}
+    \resumeItemListEnd
 
-      \resumeProjectHeading
-          {\href{https://github.com/gs0xa19f2/ITMO/tree/main/Kotlin/MultiplatformClient}{\textbf{Мультиплатформенный HTTP-клиент}} $|$ \emph{Kotlin (JVM, JS, Native)}}{}
-          \resumeItemListStart
-            \resumeItem{Поддерживает JVM, JS (Node.js, Browser) и Native платформы, с общей логикой и платформо-специфическими реализациями}
-          \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Библиотека команд, аудита и метрик для серверного приложения}}{}
+    \resumeItemListStart
+      \resumeItem{Библиотека-стартер для Spring Boot. Реализует очередь команд с приоритетами и валидацией, AOP-аудит действий, сбор и экспорт метрик, глобальный обработчик ошибок, интеграцию с Kafka и покрытие unit- и интеграционными тестами}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
 
-      \resumeProjectHeading
-          {\href{https://github.com/gs0xa19f2/Hyperskill/tree/main/Projects/Go/Version\%20Control\%20System\%20}{\textbf{Система контроля версий}} $|$ \emph{Go}}{}
-          \resumeItemListStart
-            \resumeItem{Предоставляет основные функции Git}
-          \resumeItemListEnd
+%-----------EDUCATION-----------
+\section{Образование}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Университет ИТМО}{} 
+    {Студент 3 курса, Компьютерные технологии: программирование и искусственный интеллект}{}
+\resumeSubHeadingListEnd
 
-      \resumeProjectHeading
-          {\href{https://github.com/gs0xa19f2/Hyperskill/tree/main/Projects/Go/Regex\%20Engine\%20}{\textbf{Regex Engine}} $|$ \emph{Go}}{}
-          \resumeItemListStart
-            \resumeItem{Движок для работы с регулярными выражениями, способный анализировать и сопоставлять шаблоны в тексте}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-%-----------TECHNICAL SKILLS-----------
-\section{Технические навыки}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Языки программирования}{: Java, Kotlin, Go, Python, C/C++, SQL, Bash} \\
-     \textbf{Фреймворки и технологии}{: Spring, Docker, Git, JUnit, REST, MongoDB, Linux} \\
-    }}
- \end{itemize}
-
-%-----------OTHER-----------
-\section{Прочее}
+%-----------ACHIEVEMENTS-----------
+\section{Достижения}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \item{\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/Рекомендательное%20письмо%20UCSD.pdf}{Получено рекомендательное письмо от профессоров \textbf{А.С. Куликова} (СПбГУ, ПОМИ РАН) и \textbf{П. Певзнера} (UCSD, University of California, San Diego).}}
     \item{\href{https://hyperskill.org/wrapped/year-2024/398153840?utm_source=wrapped_hs&utm_medium=social&utm_campaign=newyear_wrapped2024}{Вошёл в топ 3\% студентов Hyperskill (JetBrains Academy) по всему миру по итогам 2024 года.}}
