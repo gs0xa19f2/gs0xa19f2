@@ -1,0 +1,162 @@
+%-------------------------
+% Resume in Latex
+% Author : Adapted for Sergei Gusev (gs0xa19f2)
+%------------------------
+
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+% \usepackage[russian]{babel} % Switched to English
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.32in, label={}]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Sergei Gusev} \\[8pt]
+    {\Large \scshape Software Engineer} \\[12pt]
+    \href{mailto:greygosling6@gmail.com}{gs0xa19f2@tutamail.com} $|$ 
+    +7 920 120 6928 $|$
+    \href{https://github.com/gs0xa19f2}{github.com/gs0xa19f2} $|$
+    \href{https://t.me/gs0xa19f2}{@gs0xa19f2} $|$
+    \href{https://leetcode.com/gs0xa19f2}{leetcode.com/gs0xa19f2}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Picodata}{2025 -- Present}
+    {Rust-Developer}{}
+    \resumeItemListStart
+        \resumeItem{\textit{A distributed in-memory NewSQL DBMS with Rust plugin support. Picodata is a fast-growing Russian startup expanding its customer base, including leading national big-tech players}}
+        
+        \resumeItem{\textbf{Advanced the tool for Picodata plugin development and management}}
+            \resumeItemListStart
+                \resumeItem{Single-handedly implemented key features that formed the foundation for releases \textbf{2.9.0} and \textbf{3.0.0}, streamlining and accelerating development workflows for all teams.}
+                \resumeItem{Key contributions include: an enhanced plugin template, configuration validation, standardized artifact naming, and new options for flexible builds, multi-version testing, dynamic config application, and external plugin support in cluster topologies}
+            \resumeItemListEnd
+
+        \resumeItem{\textbf{Enhanced Cassandra (CQL) protocol compatibility layer}}
+            \resumeItemListStart
+                \resumeItem{Resolved critical bugs in the CQL parser, enabling correct processing of requests from native drivers and third-party tools.}
+                \resumeItem{Addressed issues such as case-insensitive data types, the use of reserved keywords as identifiers, complex query processing, and support for Cassandra-compliant command combinations}
+            \resumeItemListEnd
+            
+        \resumeItem{\textbf{API design for a low-code platform used by a FinTech partner}}
+            \resumeItemListStart
+                \resumeItem{Designed and implemented a new RESTful API for table truncation, replacing a legacy mechanism with separate authorization following a migration to Picodata.}
+                \resumeItem{Ensured consistent execution of the operation across a distributed cluster by asynchronously dispatching RPC requests to all replicas}
+            \resumeItemListEnd
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \resumeSubHeadingListStart
+    \resumeItem{\textbf{Technologies \& Frameworks:} Spring Boot, Microservices, Kafka, Docker, REST, gRPC, JUnit, Mockito, Grafana, Observability, Git, Linux}
+    \resumeItem{\textbf{Programming Languages:} Rust, Kotlin, Go, C/C++, Java, Python, Bash}
+    \resumeItem{\textbf{Databases:} Picodata, Cassandra, MongoDB, MySQL, PostgreSQL}
+    \resumeItem{\textbf{Languages:} Russian (Native), English (C1)}
+ \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Caching and Country Search Plugin for Picodata}}{}
+    \resumeItemListStart
+      \resumeItem{Developed an HTTP API with caching (TTL, auto-refresh), error handling, and integration tests}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Command, Audit, and Metrics Library for a Server Application}}{}
+    \resumeItemListStart
+      \resumeItem{A Spring Boot starter featuring: a command queue with prioritization and validation, AOP-based auditing, metrics, global error handling, Kafka integration, and comprehensive unit- and integration tests}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {ITMO University}{}
+    {BS in Computer Science: Programming and Artificial Intelligence}{}
+    \resumeItemListStart
+        \resumeItem{\textit{All-time ACM ICPC world record holder (multiple championships); one of Russia's leading IT universities. Consistently high positions in QS subject rankings (Computer Science), strong performance in ARWU (Shanghai) and Forbes Russia lists}}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item{\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/%D0%A0%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%20UCSD.pdf}{Letter of Recommendation from Professors \textbf{A. Kulikov} (SPbU, PDMI RAS) and \textbf{P. Pevzner} (UCSD).}}
+    \item{\href{https://hyperskill.org/wrapped/year-2024/398153840?utm_source=wrapped_hs&utm_medium=social&utm_campaign=newyear_wrapped2024}{Ranked in the top 3\% of Hyperskill (JetBrains Academy) students worldwide in 2024.}}
+    \item{\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/Результаты%20тренировок%20по%20алгоритмам%20(ноябрь%202025).xlsx}{Top-30 in Yandex algorithm training rankings in 2025.}}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

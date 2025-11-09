@@ -1,8 +1,6 @@
 %-------------------------
 % Resume in Latex
-% Author : Adapted for Sergey Gusev (gs0xa19f2)
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
+% Author : Adapted for Sergei Gusev (gs0xa19f2)
 %------------------------
 
 \documentclass[letterpaper,12pt]{article}
@@ -47,9 +45,7 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{{#1 \vspace{-2pt}}}
 }
 
 \newcommand{\resumeSubheading}[4]{
@@ -79,7 +75,7 @@
 
 \begin{center}
     {\Huge \scshape Сергей Гусев} \\[8pt]
-    {\Large \scshape Java Backend Developer} \\[12pt]
+    {\Large \scshape Software Engineer} \\[12pt]
     \href{mailto:greygosling6@gmail.com}{greygosling6@gmail.com} $|$ 
     +7 920 120 6928 $|$
     \href{https://github.com/gs0xa19f2}{github.com/gs0xa19f2} $|$
@@ -93,27 +89,38 @@
 
   \resumeSubheading
     {Picodata}{2025 -- наст.вр.}
-    {Part-time стажер-разработчик}{Удаленно}
+    {Rust-разработчик}{}
     \resumeItemListStart
-      \resumeItem{Реализовал плагин прозрачного кеша. Участвовал в создании и поддержке API. Занимался поддержкой и развитием имплементации протокола Cassandra на базе Picodata}
-    \resumeItemListEnd
+        \resumeItem{\textit{Picodata — распределенная in-memory NewSQL СУБД с поддержкой плагинов на Rust }}
+        
+        \resumeItem{\textbf{Развитие инструмента для разработки и управления плагинами Picodata}}
+            \resumeItemListStart
+                \resumeItem{Самостоятельно реализовал ключевые улучшения, которые легли в основу релизов \textbf{2.9.0} и \textbf{3.0.0}, упростив и ускорив процессы разработки для всех команд. }
+                \resumeItem{Ключевые доработки: расширение шаблона плагина, валидация конфигураций, стандартизация именования артефактов, добавление опций для гибкой сборки, тестирования на разных версиях Picodata, гибкого применения конфигов и поддержку внешних плагинов в топологии}
+            \resumeItemListEnd
 
-  \resumeSubheading
-    {Фриланс}{2024}
-    {Fullstack Web-разработчик}{Удаленно}
-    \resumeItemListStart
-      \resumeItem{Разработал сайт с регистрацией и авторизацией, приоритет — безопасность. Проектировал архитектуру, реализовал backend и frontend. Использовал PDO для защиты от SQL-инъекций, bcrypt для хеширования паролей. Внедрил CSRF и XSS-защиту, санитизацию данных, экранирование вывода, отключение опасных функций. Обеспечил покрытие тестами}
-    \resumeItemListEnd
+        \resumeItem{\textbf{Повышение совместимости в протоколе Cassandra поверх Picodata}}
+            \resumeItemListStart
+                \resumeItem{Устранил критические баги в парсере CQL, что позволило корректно обрабатывать запросы от нативных драйверов и сторонних инструментов.}
+                \resumeItem{Решенные проблемы включали поддержку типов данных в разном регистре, использование зарезервированных слов в качестве имен, обработку сложных запросов и поддержку совместного использования команд, согласованного с Cassandra}
+            \resumeItemListEnd
+            
+        \resumeItem{\textbf{Проектирование API в low-code платформе для Финтех-партнера}}
+            \resumeItemListStart
+                \resumeItem{Спроектировал и реализовал новый RESTful API для усечения таблиц, заменив устаревший механизм с отдельной авторизацией после миграции на Picodata. }
+                \resumeItem{Обеспечил консистентное выполнение операции в распределенном кластере через асинхронную отправку RPC-запросов на все реплики}
+            \resumeItemListEnd
+    \resumeItemListEnd 
 
 \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
 \section{Навыки}
  \resumeSubHeadingListStart
-    \resumeItem{\textbf{Технологии и фреймворки:} Spring Boot, Kafka, Docker, Git, Linux, REST, gRPC, JUnit, Mockito}
-    \resumeItem{\textbf{Языки программирования:} Java, Kotlin, Go, Python, C/C++, Rust, Bash}
-    \resumeItem{\textbf{Базы данных:} MySQL, PostgreSQL, MongoDB}
-    \resumeItem{\textbf{Языки:} Русский (родной), Английский (C1)}
+    \resumeItem{\textbf{Технологии и фреймворки:} Spring Boot, Microservices, Kafka, Docker, REST, gRPC, JUnit, Mockito, Grafana, Observability, Git, Linux}
+    \resumeItem{\textbf{Языки программирования:} Rust, Kotlin, Go, C/C++, Java, Python, Bash}
+    \resumeItem{\textbf{Базы данных:} Picodata, Cassandra, MongoDB, MySQL, PostgreSQL}
+    \resumeItem{\textbf{Языки:} Русский, Английский - C1}
  \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
@@ -122,13 +129,13 @@
   \resumeProjectHeading
     {\textbf{Плагин кеширования и поиска стран для Picodata}}{}
     \resumeItemListStart
-      \resumeItem{Плагин, реализующий HTTP API для получения информации о странах с кешированием в базе. Включает реализацию endpoint'а, автоматическое обновление данных, поддержку TTL для кеша, обработку ошибок и покрытие интеграционными тестами}
+      \resumeItem{HTTP API с кешированием (TTL, автообновление), обработкой ошибок и интеграционными тестами}
     \resumeItemListEnd
 
   \resumeProjectHeading
     {\textbf{Библиотека команд, аудита и метрик для серверного приложения}}{}
     \resumeItemListStart
-      \resumeItem{Библиотека-стартер для Spring Boot. Реализует очередь команд с приоритетами и валидацией, AOP-аудит действий, сбор и экспорт метрик, глобальный обработчик ошибок, интеграцию с Kafka и покрытие unit- и интеграционными тестами}
+      \resumeItem{Стартер для Spring Boot: очередь команд с приоритезацией и валидацией, AOP-аудит действий, метрики, глобальная обработка ошибок, интеграция с Kafka, unit \& integration тесты}
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -143,8 +150,9 @@
 %-----------ACHIEVEMENTS-----------
 \section{Достижения}
  \begin{itemize}[leftmargin=0.15in, label={}]
-    \item{\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/Рекомендательное%20письмо%20UCSD.pdf}{Получено рекомендательное письмо от профессоров \textbf{А.С. Куликова} (СПбГУ, ПОМИ РАН) и \textbf{П. Певзнера} (UCSD, University of California, San Diego).}}
-    \item{\href{https://hyperskill.org/wrapped/year-2024/398153840?utm_source=wrapped_hs&utm_medium=social&utm_campaign=newyear_wrapped2024}{Вошёл в топ 3\% студентов Hyperskill (JetBrains Academy) по всему миру по итогам 2024 года.}}
+    \item{\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/%D0%A0%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%20UCSD.pdf}{Рекомендательное письмо от профессоров \textbf{А.\,С. Куликова} (СПбГУ, ПОМИ РАН) и \textbf{П. Певзнера} (UCSD).}}
+    \item{\href{https://hyperskill.org/wrapped/year-2024/398153840?utm_source=wrapped_hs&utm_medium=social&utm_campaign=newyear_wrapped2024}{Топ 3\% студентов Hyperskill (JetBrains Academy) по итогам 2024 года.}}
+    \item{\href{https://github.com/gs0xa19f2/gs0xa19f2/blob/main/Результаты%20тренировок%20по%20алгоритмам%20(ноябрь%202025).xlsx}{Топ-30 рейтинга тренировок по алгоритмам Яндекса по итогам 2025 года.}}
  \end{itemize}
 
 %-------------------------------------------
